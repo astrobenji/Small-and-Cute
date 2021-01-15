@@ -11,15 +11,14 @@ Last Updated: Jan 15, 2021
 
 import numpy as np
 
-diag_names      =          ['R23',  'N2O2',  'O3N2']
-min_wavelengths = np.array([0.3727, 0.3727,  0.4861]) # in microns
-max_wavelengths = np.array([0.5007, 0.6854,  0.6854])
+diags = {'R23': np.array([0.3727, 0.4861, 0.4959, 0.5007]),
+         'N2O2': np.array([0.3727, 0.5007]),
+         'O3N2': np.array([0.4861, 0.5007, 0.6563, 0.6854])}
 
 if __name__=="__main__":
     z = float(input("Input redshift: "))
-    min_wavelengths = min_wavelengths*(1+z)
-    max_wavelengths = max_wavelengths*(1+z)
     print("At z={0}, Hb={1:.5f} microns\n".format(z, 0.4861*(1+z)))
-    for ii, diag in enumerate(diag_names):
-        print("Wavelength range for {0} diagnostic: {1:.5f}-{2:.5f} microns".format(diag, min_wavelengths[ii], max_wavelengths[ii]))
-        
+    for diag in diags.keys():
+        waves = diags[diag]*(1+z)
+        print("Wavelength range for {0} diagnostic:".format(diag))
+        print('\t', waves, '\n')
