@@ -11,9 +11,11 @@ Last Updated: Jan 15, 2021
 
 import numpy as np
 
+# These diagnostics are taken from:
+# Wavelengths reported in microns.
 diags = {'R23': np.array([0.3727, 0.4861, 0.4959, 0.5007]),
          'N2O2': np.array([0.3727, 0.5007]),
-         'O3N2': np.array([0.4861, 0.5007, 0.6563, 0.6854])}
+         'O3N2': np.array([0.4861, 0.5007, 0.6584, 0.6563])}
 
 if __name__=="__main__":
     z = float(input("Input redshift: "))
