@@ -11,7 +11,7 @@ Last Updated: Jan 15, 2021
 
 import numpy as np
 
-# These diagnostics are taken from:
+# These diagnostics are taken from: https://ui.adsabs.harvard.edu/abs/2019ARA%26A..57..511K/abstract
 # Wavelengths reported in microns.
 diags = {'R23': np.array([0.3727, 0.4861, 0.4959, 0.5007]),
          'N2O2': np.array([0.3727, 0.5007]),
